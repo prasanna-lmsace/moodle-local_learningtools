@@ -100,7 +100,7 @@ function ltool_bookmarks_myprofile_navigation(tree $tree, $user, $iscurrentuser,
  */
 function user_save_bookmarks($contextid, $data) {
     global $DB, $PAGE;
-    $context = context_system::instance();
+    $context = context::instance_by_id($contextid, MUST_EXIST);
     $PAGE->set_context($context);
 
     if (confirm_sesskey()) {
@@ -125,8 +125,8 @@ function user_save_bookmarks($contextid, $data) {
             $event = \ltool_bookmarks\event\ltbookmarks_created::create([
                 'context' => $context,
                 'other' => [
-                    'courseid' => $course,
-                    'pagetype' => $pagetype,
+                    'courseid' => $record->course,
+                    'pagetype' => $record->pagetype,
                 ]
             ]);
             $event->trigger();
@@ -135,14 +135,13 @@ function user_save_bookmarks($contextid, $data) {
             $bookmarksstatus = !empty($bookmarksrecord) ? true : false;
             $notificationtype = 'success';
         } else {
-
             $DB->delete_records('learningtools_bookmarks', array('contextid' => $contextid));
-             // Add event to user delete the bookmark.
+            // Add event to user delete the bookmark.
             $event = \ltool_bookmarks\event\ltbookmarks_deleted::create([
                 'context' => $context,
                 'other' => [
-                    'courseid' => $course,
-                    'pagetype' => $pagetype,
+                    'courseid' => $data['course'],
+                    'pagetype' => $data['pagetype'],
                 ]
             ]);
 
