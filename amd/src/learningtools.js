@@ -7,7 +7,7 @@ define(['jquery', 'core/str'], function($, str) {
      */
     function learning_tools_action(viewbookmarks, viewnote, loggedin) {
         // Add fab button.
-        if (loggedin) {
+        if (loggedin && typeof fabbuttonhtml != undefined) {
             $(fabbuttonhtml).insertBefore("footer");
         }
 

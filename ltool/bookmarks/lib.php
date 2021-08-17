@@ -53,9 +53,8 @@ function ltool_bookmarks_myprofile_navigation(tree $tree, $user, $iscurrentuser,
                     get_string('coursebookmarks', 'local_learningtools'), null, $bookmarksurl);
                     $tree->add_node($bookmarksnode);
                 } else {
-                    $bookmarksurl = new moodle_url('/local/learningtools/
-                        ltool/bookmarks/list.php', array('courseid' => $course->id,
-                        'userid' => $userid));
+                    $bookmarksurl = new moodle_url('/local/learningtools/ltool/bookmarks/list.php', 
+                        array('courseid' => $course->id, 'userid' => $userid));
                     $bookmarksnode = new core_user\output\myprofile\node('learningtools',
                         'bookmarks', get_string('coursebookmarks', 'local_learningtools'),
                     null, $bookmarksurl);
@@ -64,8 +63,7 @@ function ltool_bookmarks_myprofile_navigation(tree $tree, $user, $iscurrentuser,
 
             } else {
                 if (has_capability('ltool/bookmarks:viewownbookmarks', $context)) {
-                    $bookmarksurl = new moodle_url('/local/learningtools/
-                        ltool/bookmarks/list.php');
+                    $bookmarksurl = new moodle_url('/local/learningtools/ltool/bookmarks/list.php');
                     $bookmarksnode = new core_user\output\myprofile\node('learningtools', 'bookmarks',
                         get_string('bookmarks', 'local_learningtools'), null, $bookmarksurl);
                     $tree->add_node($bookmarksnode);

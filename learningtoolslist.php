@@ -105,7 +105,7 @@ foreach ($learningtools as $tool) {
     $status = '-';
     $lttool = $DB->get_record('learningtools_products', array('shortname' => $plugin));
     if ($lttool->status) {
-        $aurl = new moodle_url($PAGE->url, array('action ' => 'disable', 'tool' => $plugin));
+        $aurl = new moodle_url($PAGE->url, array('action' => 'disable', 'tool' => $plugin));
         $status = "<a href=\"$aurl\">";
         $status .= $OUTPUT->pix_icon('t/hide', $strdisable) . '</a>';
         $enabled = true;

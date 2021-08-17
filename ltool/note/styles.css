@@ -1,0 +1,141 @@
+/*Notes page*/
+
+/*Notes page course, category and sort block*/
+.path-local-learningtools-ltool-note .top-block {
+	text-align: right;
+	margin-bottom: 20px;
+}
+.path-local-learningtools-ltool-note .top-block .course-block,
+.path-local-learningtools-ltool-note .top-block #ltnote-coursefilter {
+	float: left;
+	margin-bottom: 20px;
+	margin-right: 15px;
+}
+.path-local-learningtools-ltool-note .top-block #ltnote-coursefilter,
+.path-local-learningtools-ltool-note .top-block .ltnote-activityfilter {
+	display: inline-block;
+	float: left;
+	margin-bottom: 15px;
+}
+.path-local-learningtools-ltool-note .top-block > div:last-child {
+	display: inline-block;
+}
+.path-local-learningtools-ltool-note .top-block > div.ltbookmarks-coursefilter {
+	text-align: left;
+	float: none;
+	display: block;
+}
+.path-local-learningtools-ltool-note .top-block > div.ltnote-sortfilter {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.path-local-learningtools-ltool-note .top-block > div.ltnote-sortfilter i {
+	margin-right: 5px;
+}
+.path-local-learningtools-ltool-note .top-block > div select {
+	min-width: 250px;
+	width: auto;
+	text-align: left;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+    background: none;
+    padding: 5px;
+    display: inline-block;
+}
+.path-local-learningtools-ltool-note .top-block > div select:after {
+	float: right;
+	margin-top: 10px;
+}
+
+/*sort block*/
+.path-local-learningtools-ltool-note .top-block > div.sort-block {
+	margin-bottom: 20px
+}
+.path-local-learningtools-ltool-note .top-block > div.sort-block select {
+	border: 0;
+	display: inline-block;
+}
+.path-local-learningtools-ltool-note .top-block > div.sort-block select:focus,
+.path-local-learningtools-ltool-note .top-block > div.sort-block select:active,
+.path-local-learningtools-ltool-note .top-block > div.sort-block select:focus:active {
+	outline: none;
+	box-shadow: none;
+}
+
+/*Notes main body - Accordion block*/
+.ltnotes-mainbody {
+	margin-top: 20px;
+	clear: both;
+}
+.ltnotes-mainbody .card {
+	border: 0;
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+.ltnotes-mainbody .card + .card {
+	border-top: 1px solid #ccc;
+}
+
+/*Accordion header content*/
+.ltnotes-mainbody .card .card-header {
+	padding: 0;
+	margin-bottom: 20px;
+	border: 0;
+	background: none;
+}
+.ltnotes-mainbody .card .card-header h5 button {
+	width: 100%;
+	color: #000;
+	font-size: 20px;
+    text-align: left;
+    text-decoration: none;
+	display: block;
+}
+.ltnotes-mainbody .card .card-header h5 button:after {
+	content: '\f103';
+	font-family: 'fontawesome';
+	float: right;
+}
+.ltnotes-mainbody .card .card-header h5 button.collapsed:after {
+	content: '\f102';
+	font-family: 'fontawesome';
+}
+
+/*Accordion body content*/
+.ltnotes-mainbody .card .card-body {
+	border: 1px solid #eee;
+	margin-bottom: 20px;
+}
+.ltnotes-mainbody .card .card-body .content-block .title-block {
+	text-align: right;
+}
+.ltnotes-mainbody .card .card-body .content-block .title-block h4 {
+	font-size: 15px;
+    font-weight: bold;
+    margin-top: 5px;
+    float: left;
+	margin-right: 15px;
+}
+.ltnotes-mainbody .card .card-body .content-block .title-block .details-block {
+	display: inline-block;
+}
+.ltnotes-mainbody .card .card-body .content-block .title-block .details-block .calendar-block {
+	margin-right: 10px;
+}
+.ltnotes-mainbody .card .card-body .content-block .title-block .details-block .btn-block {
+	width: auto;
+	display: inline-block;
+}
+
+@media (max-width: 575px) {
+	.ltnotes-mainbody .card .card-body .content-block .title-block h4 {
+		text-align: left;
+		float: none;
+	}
+	.ltnotes-mainbody .card .card-body .content-block .title-block .details-block {
+		display: block;
+	}
+	.ltnotes-mainbody .card .card-body .content-block .title-block .details-block .calendar-block {
+		float: left;
+	}
+}

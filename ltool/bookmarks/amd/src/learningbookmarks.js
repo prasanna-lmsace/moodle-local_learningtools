@@ -14,8 +14,8 @@ define(['jquery', 'core/str', 'core/ajax', 'core/notification'],
     	Ajax.call([{
 			methodname: 'ltool_bookmarks_save_userbookmarks',
 			args: {contextid: contextid, formdata: formData},
-			done: function(response) { 
-                
+			done: function(response) {
+
 				notification.addNotification({
 	                message: response.bookmarksmsg,
 	                type: response.notificationtype
